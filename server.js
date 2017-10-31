@@ -32,6 +32,30 @@ app.route('/_api/package.json')
       res.type('txt').send(data.toString());
     });
   });
+
+app.route('/:data')
+  .get(function(req, res) {
+	  let data = req.params.data;
+	  let response = {};
+	  let date;
+	
+	  if (/^\d+$/.test(data)) data = +data //if all digits, convert to number
+	  try {
+	    date = new Date(data);
+	    console.log("Date: " + date.getTime());
+    } catch (err) {
+      console.log(err);
+    }
+  
+    if (date.getTime()) {
+      response.Unix = date.valueOf();
+      response.Natural = date.toLocalString('en-us', { month: 'long', day: 'numeric', year: 'numeric' });
+    } else {
+      response.Unix = null;
+      response.Natural = null;
+    }
+    res.status(200).send(response);
+  });
   
 app.route('/')
     .get(function(req, res) {

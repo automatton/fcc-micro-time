@@ -1,5 +1,5 @@
 {
-	"name": "fcc-learn-npm-package-json",
+	"name": "fcc-micro-time",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
@@ -8,10 +8,10 @@
 		"start": "node server.js"
 	},
 	"engines": {
-		"node": "4.4.5"
+		"node": "6.11.4"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://idontknow/todo.git"
+		"url": "https://github.com/automatton/fcc-micro-time.git"
 	}
 }
